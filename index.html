@@ -1,213 +1,288 @@
-/* ============ RESET ============ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agro Forte — soluções sustentáveis para o agronegócio">
+    <title>Agro Forte - Futuro Sustentável</title>
+    <style>
+        /* ============ RESET ============ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    background: #f4f7f2;
-    color: #2b2b2b;
-    line-height: 1.6;
-}
+        body {
+            background: #f4f7f2;
+            color: #2b2b2b;
+            line-height: 1.6;
+        }
 
-/* ============ HEADER ============ */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-    background: #1e5631;
-    color: #fff;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+        /* ============ HEADER ============ */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: #1e5631;
+            color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
 
-.logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-}
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
 
-nav a:hover {
-    color: #a8e063;
-}
+        nav a:hover {
+            color: #a8e063;
+        }
 
-/* ============ BANNER ============ */
-.banner {
-    height: 90vh;
-    background: linear-gradient(135deg, #1e5631, #4c9a2a);
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 2rem;
-}
+        /* ============ BANNER ============ */
+        .banner {
+            height: 90vh;
+            background: linear-gradient(135deg, #1e5631, #4c9a2a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
 
-.banner h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
+        .banner h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
 
-.banner p {
-    font-size: 1.3rem;
-    margin-bottom: 2rem;
-}
+        .banner p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+        }
 
-.btn {
-    background: #f9a825;
-    color: #1e5631;
-    padding: 0.8rem 2rem;
-    border: none;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: bold;
-    cursor: pointer;
-    transition: transform 0.3s, background 0.3s;
-}
+        .btn {
+            background: #f9a825;
+            color: #1e5631;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
 
-.btn:hover {
-    background: #ffb300;
-    transform: translateY(-3px);
-}
+        .btn:hover {
+            background: #ffb300;
+            transform: translateY(-3px);
+        }
 
-/* ============ SEÇÕES ============ */
-section {
-    padding: 4rem 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
-}
+        /* ============ SEÇÕES ============ */
+        section {
+            padding: 4rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-section h2 {
-    text-align: center;
-    font-size: 2.2rem;
-    color: #1e5631;
-    margin-bottom: 1rem;
-}
+        section h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #1e5631;
+            margin-bottom: 1rem;
+        }
 
-section > p {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-    font-size: 1.1rem;
-}
+        section > p {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            font-size: 1.1rem;
+        }
 
-/* ============ CARDS ============ */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
+        /* ============ CARDS ============ */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
 
-.card {
-    background: #fff;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
-}
+        .card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
 
-.card:hover {
-    transform: translateY(-5px);
-}
+        .card:hover {
+            transform: translateY(-5px);
+        }
 
-.card h3 {
-    color: #4c9a2a;
-    margin-bottom: 0.5rem;
-}
+        .card h3 {
+            color: #4c9a2a;
+            margin-bottom: 0.5rem;
+        }
 
-/* ============ LISTA DESAFIOS ============ */
-.lista-desafios {
-    list-style: none;
-    max-width: 700px;
-    margin: 0 auto;
-}
+        /* ============ LISTA DESAFIOS ============ */
+        .lista-desafios {
+            list-style: none;
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
-.lista-desafios li {
-    background: #fff;
-    padding: 1rem 1.5rem;
-    margin-bottom: 0.8rem;
-    border-left: 5px solid #f9a825;
-    border-radius: 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-}
+        .lista-desafios li {
+            background: #fff;
+            padding: 1rem 1.5rem;
+            margin-bottom: 0.8rem;
+            border-left: 5px solid #f9a825;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+        }
 
-/* ============ FORMULÁRIO ============ */
-.form-contato {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    margin: 0 auto;
-}
+        /* ============ FORMULÁRIO ============ */
+        .form-contato {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-.form-contato input,
-.form-contato textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    outline: none;
-    transition: border 0.3s;
-}
+        .form-contato input,
+        .form-contato textarea {
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+        }
 
-.form-contato input:focus,
-.form-contato textarea:focus {
-    border-color: #4c9a2a;
-}
+        .form-contato input:focus,
+        .form-contato textarea:focus {
+            border-color: #4c9a2a;
+        }
 
-.form-contato button {
-    align-self: center;
-}
+        .form-contato button {
+            align-self: center;
+        }
 
-/* ============ FOOTER ============ */
-footer {
-    background: #1e5631;
-    color: #fff;
-    text-align: center;
-    padding: 1.5rem;
-    margin-top: 2rem;
-}
+        /* ============ FOOTER ============ */
+        footer {
+            background: #1e5631;
+            color: #fff;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
 
-/* ============ RESPONSIVO ============ */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        gap: 1rem;
-    }
+        /* ============ RESPONSIVO ============ */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
 
-    nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-    }
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
 
-    .banner h1 {
-        font-size: 2rem;
-    }
+            .banner h1 {
+                font-size: 2rem;
+            }
 
-    .banner p {
-        font-size: 1rem;
-    }
-}
+            .banner p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Agro Forte</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="banner" id="inicio">
+        <h1>Agro Forte, Futuro Sustentável</h1>
+        <p>Tecnologia e conservação para o agronegócio do amanhã</p>
+        <a href="#solucoes" class="btn">Conheça Nossas Soluções</a>
+    </section>
+
+    <section id="solucoes">
+        <h2>Nossas Soluções</h2>
+        <p>Oferecemos tecnologias inovadoras para transformar o agronegócio brasileiro</p>
+        <div class="cards">
+            <div class="card">
+                <h3>Tecnologia de Precisão</h3>
+                <p>Sensores IoT e drones para monitoramento em tempo real das suas culturas.</p>
+            </div>
+            <div class="card">
+                <h3>Gestão Inteligente</h3>
+                <p>Softwares avançados para controle de estoque e previsão de safras.</p>
+            </div>
+            <div class="card">
+                <h3>Consultoria Especializada</h3>
+                <p>Equipe de agrônomos prontos para oferecer suporte técnico personalizado.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="desafios">
+        <h2>Desafios do Setor</h2>
+        <p>Entendemos os principais obstáculos que o agronegócio enfrenta hoje</p>
+        <ul class="lista-desafios">
+            <li><strong>Mudanças Climáticas:</strong> Adaptação a eventos extremos e práticas de mitigação</li>
+            <li><strong>Escassez de Recursos:</strong> Uso eficiente da água e conservação do solo</li>
+            <li><strong>Logística Complexa:</strong> Otimização do transporte e armazenamento</li>
+            <li><strong>Sustentabilidade:</strong> Equilíbrio entre produção e preservação ambiental</li>
+        </ul>
+    </section>
+
+    <section id="contato">
+        <h2>Entre em Contato</h2>
+        <p>Estamos prontos para ajudar você a construir o futuro do agro</p>
+        <form class="form-contato" action="#" method="post">
+            <input type="text" placeholder="Seu nome" required>
+            <input type="email" placeholder="Seu e-mail" required>
+            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
+            <button type="submit" class="btn">Enviar Mensagem</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
