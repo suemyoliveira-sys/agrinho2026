@@ -1,5 +1,15 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Agro Forte — soluções sustentáveis para o agronegócio. Tecnologia, conservação e futuro." />
+<title>Agro Forte, Futuro Sustentável</title>
+
+<style>
 /* ==========================================================================
-   1. CONFIGURAÇÕES GERAIS E RESETS
+   CSS embutido: style.css consolidado
    ========================================================================== */
 * {
     margin: 0;
@@ -7,8 +17,45 @@
     box-sizing: border-box;
 }
 
+/* Skip link (acessibilidade) */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    left: 10px;
+    top: 10px;
+    width: auto;
+    height: auto;
+    padding: 8px 12px;
+    background: #fff;
+    color: #2c5e3b;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    z-index: 2000;
+    text-decoration: none;
+}
+
+/* Texto apenas para leitores de tela */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+/* Global */
 html {
-    scroll-behavior: smooth; /* Efeito de rolagem suave ao clicar no menu */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -16,18 +63,22 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
+    padding-top: 70px; /* Compensa o header fixo */
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
+/* Foco acessível */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 3px solid rgba(76, 175, 80, 0.25);
+    outline-offset: 3px;
+    border-radius: 4px;
 }
 
+/* Listas */
 ul {
     list-style: none;
 }
 
-/* Reutilização de espaçamento nas seções */
+/* Seções */
 section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -37,7 +88,7 @@ section {
 
 section h2 {
     font-size: 2rem;
-    color: #2c5e3b; /* Verde escuro */
+    color: #2c5e3b;
     margin-bottom: 20px;
     position: relative;
 }
@@ -47,14 +98,12 @@ section h2::after {
     display: block;
     width: 50px;
     height: 3px;
-    background-color: #4caf50; /* Verde folha */
+    background-color: #4caf50;
     margin: 10px auto 0 auto;
     border-radius: 2px;
 }
 
-/* ==========================================================================
-   2. HEADER & NAVEGAÇÃO
-   ========================================================================== */
+/* HEADER */
 header {
     background-color: #ffffff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -67,6 +116,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
+    gap: 10px;
 }
 
 header .logo {
@@ -75,31 +125,27 @@ header .logo {
     color: #2c5e3b;
 }
 
-header nav ul {
+header nav[role="navigation"] ul {
     display: flex;
     gap: 20px;
+    align-items: center;
 }
 
 header nav ul li a {
     font-weight: 500;
     color: #555;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.15s ease;
 }
 
-header nav ul li a:hover {
+header nav ul li a:hover,
+header nav ul li a:active {
     color: #4caf50;
+    transform: translateY(-2px);
 }
 
-/* Compensar o topo fixo do header nas seções */
-body {
-    padding-top: 70px;
-}
-
-/* ==========================================================================
-   3. BANNER PRINCIPAL (INÍCIO)
-   ========================================================================== */
+/* BANNER */
 .banner {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
                 url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
     height: 70vh;
     display: flex;
@@ -109,6 +155,7 @@ body {
     color: #ffffff;
     max-width: 100%;
     padding: 0 20px;
+    text-align: center;
 }
 
 .banner h1 {
@@ -131,6 +178,8 @@ body {
     border-radius: 25px;
     font-weight: bold;
     transition: background 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
@@ -138,9 +187,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ==========================================================================
-   4. ESTRUTURA DOS CARDS (PRODUÇÃO, DESAFIOS, SOLUÇÕES)
-   ========================================================================== */
+/* ESTRUTURA DOS CARDS */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -155,6 +202,7 @@ body {
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
     border-top: 4px solid #4caf50;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
 }
 
 .card:hover {
@@ -173,16 +221,14 @@ body {
     font-size: 0.95rem;
 }
 
-/* Customização para a seção de Desafios (borda laranja/terra) */
+/* Customização para a seção de Desafios */
 #desafios .card {
-    border-top-color: #d84315; 
+    border-top-color: #d84315;
 }
 
-/* ==========================================================================
-   5. SUSTENTABILIDADE & QUIZ
-   ========================================================================== */
+/* SUSTENTABILIDADE & QUIZ */
 #sustentabilidade {
-    background-color: #edf7ed; /* Fundo esverdeado bem suave */
+    background-color: #edf7ed;
     max-width: 100%;
 }
 
@@ -206,13 +252,14 @@ body {
     font-weight: 500;
 }
 
-/* Quiz */
+/* Quiz - padronizei com .quiz-btn */
 #quiz {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 30px;
 }
 
 #quiz p {
@@ -220,6 +267,7 @@ body {
     margin-bottom: 20px;
 }
 
+.quiz-btn,
 #quiz button {
     background-color: #f1f1f1;
     border: 2px solid #ccc;
@@ -229,9 +277,10 @@ body {
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
+.quiz-btn:hover,
 #quiz button:hover {
     background-color: #2c5e3b;
     color: white;
@@ -244,9 +293,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* ==========================================================================
-   6. CONTATO & FORMULÁRIO
-   ========================================================================== */
+/* CONTATO & FORMULÁRIO */
 #contato {
     background-color: #f0f4f1;
     max-width: 100%;
@@ -260,7 +307,14 @@ body {
     gap: 15px;
 }
 
-#contato input, 
+#contato label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+#contato input,
 #contato textarea {
     width: 100%;
     padding: 12px 15px;
@@ -271,7 +325,7 @@ body {
     transition: border-color 0.3s;
 }
 
-#contato input:focus, 
+#contato input:focus,
 #contato textarea:focus {
     border-color: #4caf50;
 }
@@ -304,9 +358,7 @@ body {
     font-style: italic;
 }
 
-/* ==========================================================================
-   7. FOOTER
-   ========================================================================== */
+/* FOOTER */
 footer {
     background-color: #2c5e3b;
     color: white;
@@ -315,9 +367,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ==========================================================================
-   8. RESPONSIVIDADE (Telas menores/Celulares)
-   ========================================================================== */
+/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -329,18 +379,12 @@ footer {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
     }
 
     body {
-        padding-top: 100px; /* Ajuste pelo header ter ficado maior no mobile */
+        padding-top: 100px; /* Ajuste pelo header maior no mobile */
     }
 
     .banner h1 {
-        font-size: 2rem;
-    }
-
-    .banner p {
-        font-size: 1rem;
-    }
-}
+        font-size:
