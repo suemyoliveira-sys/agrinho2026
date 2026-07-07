@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -135,6 +134,7 @@ header nav ul li a {
     font-weight: 500;
     color: #555;
     transition: color 0.3s ease, transform 0.15s ease;
+    text-decoration: none;
 }
 
 header nav ul li a:hover,
@@ -180,6 +180,8 @@ header nav ul li a:active {
     transition: background 0.3s ease, transform 0.2s ease;
     border: none;
     cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
 }
 
 .btn:hover {
@@ -232,19 +234,19 @@ header nav ul li a:active {
     max-width: 100%;
 }
 
-#sustentabilidade p {
+#sustentabilidade > p {
     font-size: 1.1rem;
     margin-bottom: 30px;
 }
 
-#sustentabilidade ul {
+#sustentabilidade > ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
 }
 
-#sustentabilidade ul li {
+#sustentabilidade > ul li {
     background: #fff;
     padding: 15px 25px;
     border-radius: 30px;
@@ -252,7 +254,7 @@ header nav ul li a:active {
     font-weight: 500;
 }
 
-/* Quiz - padronizei com .quiz-btn */
+/* Quiz */
 #quiz {
     background-color: #fff;
     border-radius: 8px;
@@ -291,6 +293,7 @@ header nav ul li a:active {
     margin-top: 15px;
     font-weight: bold;
     font-size: 1.1rem;
+    color: #2c5e3b;
 }
 
 /* CONTATO & FORMULÁRIO */
@@ -305,6 +308,7 @@ header nav ul li a:active {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    text-align: left;
 }
 
 #contato label {
@@ -372,4 +376,129 @@ footer {
     header {
         flex-direction: column;
         gap: 10px;
-        text-align:
+        text-align: center;
+        padding: 15px 5%;
+    }
+    header nav[role="navigation"] ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .banner h1 {
+        font-size: 2rem;
+    }
+    .banner p {
+        font-size: 1rem;
+    }
+    section {
+        padding: 40px 15px;
+    }
+}
+</style>
+</head>
+<body>
+
+    <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+    <header>
+        <div class="logo">Agro Forte</div>
+        <nav role="navigation">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#solucoes">Soluções</a></li>
+                <li><a href="#desafios">Desafios</a></li>
+                <li><a href="#sustentabilidade">Sustentabilidade</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="banner" id="inicio">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p>Tecnologia, conservação e futuro para o agronegócio.</p>
+            <a href="#solucoes" class="btn">Conheça Nossas Soluções</a>
+        </section>
+
+        <section id="solucoes">
+            <h2>Nossas Soluções</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Tecnologia de Precisão</h3>
+                    <p>Utilizamos drones e sensores IoT para monitoramento em tempo real, otimizando o uso de recursos e aumentando a produtividade.</p>
+                </div>
+                <div class="card">
+                    <h3>Gestão Inteligente</h3>
+                    <p>Softwares avançados para controle de estoque, previsão de safras e análise de dados climáticos.</p>
+                </div>
+                <div class="card">
+                    <h3>Consultoria Especializada</h3>
+                    <p>Equipe de agrônomos prontos para oferecer suporte técnico e estratégias personalizadas para sua fazenda.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="desafios">
+            <h2>Desafios do Setor</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>Mudanças Climáticas</h3>
+                    <p>Adaptação a eventos extremos e práticas para mitigação dos efeitos do clima na produção agrícola.</p>
+                </div>
+                <div class="card">
+                    <h3>Escassez de Recursos</h3>
+                    <p>Uso eficiente da água e do solo, garantindo a longevidade e a saúde das terras cultiváveis.</p>
+                </div>
+                <div class="card">
+                    <h3>Logística Complexa</h3>
+                    <p>Soluções para otimizar o transporte e armazenamento de grãos e insumos em grandes distâncias.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sustentabilidade">
+            <h2>Sustentabilidade</h2>
+            <p>Comprometidos com um futuro verde, integramos práticas sustentáveis em todas as etapas do agronegócio.</p>
+            <ul>
+                <li>Reflorestamento</li>
+                <li>Energia Solar</li>
+                <li>Plantio Direto</li>
+                <li>Tratamento de Resíduos</li>
+            </ul>
+            
+            <div id="quiz">
+                <p>Teste seus conhecimentos sobre sustentabilidade no agro!</p>
+                <p>Qual prática ajuda na conservação do solo?</p>
+                <button class="quiz-btn" onclick="document.getElementById('resultado').innerText = 'Resposta errada. Tente novamente!'">Queimada</button>
+                <button class="quiz-btn" onclick="document.getElementById('resultado').innerText = 'Correto! O plantio direto protege o solo.'">Plantio Direto</button>
+                <button class="quiz-btn" onclick="document.getElementById('resultado').innerText = 'Resposta errada. Tente novamente!'">Desmatamento</button>
+                <p id="resultado"></p>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form action="#" method="post">
+                <div>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                <div>
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+                </div>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+            <h3>Estamos prontos para ajudar você a construir o futuro do agro.</h3>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
