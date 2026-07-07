@@ -1,288 +1,497 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Agro Forte — soluções sustentáveis para o agronegócio">
-    <title>Agro Forte - Futuro Sustentável</title>
-    <style>
-        /* ============ RESET ============ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-        }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Agro Forte — soluções sustentáveis e tecnológicas para o agronegócio do futuro." />
+    <title>Agro Forte — Futuro Sustentável do Agro</title>
 
-        html {
-            scroll-behavior: smooth;
-        }
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 
-        body {
-            background: #f4f7f2;
-            color: #2b2b2b;
-            line-height: 1.6;
-        }
-
-        /* ============ HEADER ============ */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: #1e5631;
-            color: #fff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #a8e063;
-        }
-
-        /* ============ BANNER ============ */
-        .banner {
-            height: 90vh;
-            background: linear-gradient(135deg, #1e5631, #4c9a2a);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .banner h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .banner p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            background: #f9a825;
-            color: #1e5631;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .btn:hover {
-            background: #ffb300;
-            transform: translateY(-3px);
-        }
-
-        /* ============ SEÇÕES ============ */
-        section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 2.2rem;
-            color: #1e5631;
-            margin-bottom: 1rem;
-        }
-
-        section > p {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.1rem;
-        }
-
-        /* ============ CARDS ============ */
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background: #fff;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #4c9a2a;
-            margin-bottom: 0.5rem;
-        }
-
-        /* ============ LISTA DESAFIOS ============ */
-        .lista-desafios {
-            list-style: none;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .lista-desafios li {
-            background: #fff;
-            padding: 1rem 1.5rem;
-            margin-bottom: 0.8rem;
-            border-left: 5px solid #f9a825;
-            border-radius: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-        }
-
-        /* ============ FORMULÁRIO ============ */
-        .form-contato {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-contato input,
-        .form-contato textarea {
-            padding: 0.8rem;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 1rem;
-            outline: none;
-            transition: border 0.3s;
-        }
-
-        .form-contato input:focus,
-        .form-contato textarea:focus {
-            border-color: #4c9a2a;
-        }
-
-        .form-contato button {
-            align-self: center;
-        }
-
-        /* ============ FOOTER ============ */
-        footer {
-            background: #1e5631;
-            color: #fff;
-            text-align: center;
-            padding: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        /* ============ RESPONSIVO ============ */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1rem;
-            }
-
-            .banner h1 {
-                font-size: 2rem;
-            }
-
-            .banner p {
-                font-size: 1rem;
-            }
-        }
-    </style>
+    <!-- CSS externo -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <div class="logo">Agro Forte</div>
-        <nav>
-            <ul>
+
+<a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+
+<!-- ============ HEADER ============ -->
+<header id="header">
+    <div class="nav-container">
+        <a href="#inicio" class="logo">
+            <span class="logo-icon">🌱</span>
+            Agro Forte
+        </a>
+        <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <nav role="navigation">
+            <ul id="nav-menu">
                 <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#solucoes">Soluções</a></li>
                 <li><a href="#desafios">Desafios</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contato" class="nav-cta">Contato</a></li>
             </ul>
         </nav>
-    </header>
+    </div>
+</header>
 
-    <section class="banner" id="inicio">
-        <h1>Agro Forte, Futuro Sustentável</h1>
-        <p>Tecnologia e conservação para o agronegócio do amanhã</p>
-        <a href="#solucoes" class="btn">Conheça Nossas Soluções</a>
-    </section>
+<main id="main">
 
-    <section id="solucoes">
-        <h2>Nossas Soluções</h2>
-        <p>Oferecemos tecnologias inovadoras para transformar o agronegócio brasileiro</p>
-        <div class="cards">
-            <div class="card">
-                <h3>Tecnologia de Precisão</h3>
-                <p>Sensores IoT e drones para monitoramento em tempo real das suas culturas.</p>
+<!-- ============ HERO ============ -->
+<section class="hero" id="inicio">
+    <div class="hero-content">
+        <span class="hero-badge">🌾 Inovação no Campo desde 2010</span>
+        <h1>Transformando o Agro com <span>Tecnologia e Sustentabilidade</span></h1>
+        <p>Soluções inteligentes que unem tradição e inovação para construir o futuro do agronegócio brasileiro — produtivo, consciente e resiliente.</p>
+        <div class="hero-buttons">
+            <a href="#solucoes" class="btn btn-primary">Conheça as Soluções →</a>
+            <a href="#sobre" class="btn btn-outline">Saiba Mais</a>
+        </div>
+    </div>
+    <div class="scroll-indicator">↓</div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="sobre" id="sobre">
+    <div class="container">
+        <div class="sobre-grid">
+            <div class="sobre-texto fade-in">
+                <span class="section-tag">Sobre Nós</span>
+                <h2>Mais de uma década cultivando o futuro</h2>
+                <p>A Agro Forte nasceu da paixão pelo campo e da certeza de que é possível produzir mais, melhor e de forma sustentável. Unimos tecnologia de ponta, conhecimento agronômico e compromisso ambiental para entregar soluções que transformam a realidade de produtores em todo o Brasil.</p>
+                <p>Nossa missão é simples: fortalecer o agro, respeitando a terra e garantindo um legado para as próximas gerações.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span>
+                        <span class="stat-label">Produtores Atendidos</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="15">0</span>
+                        <span class="stat-label">Anos de Experiência</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="30">0</span>
+                        <span class="stat-label">Soluções Desenvolvidas</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="98">0</span>
+                        <span class="stat-label">% de Satisfação</span>
+                    </div>
+                </div>
             </div>
-            <div class="card">
+            <div class="sobre-imagem fade-in"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ SOLUÇÕES ============ -->
+<section class="solucoes" id="solucoes">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Nossas Soluções</span>
+            <h2>Tecnologia a serviço do campo</h2>
+            <p>Conheça as ferramentas e serviços que estão revolucionando a produção agrícola brasileira.</p>
+        </div>
+        <div class="cards-grid">
+            <div class="card fade-in">
+                <div class="card-icon">🛰️</div>
+                <h3>Agricultura de Precisão</h3>
+                <p>Drones, sensores IoT e imagens de satélite para monitoramento em tempo real das suas lavouras, otimizando recursos e aumentando a produtividade.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-icon">📊</div>
                 <h3>Gestão Inteligente</h3>
-                <p>Softwares avançados para controle de estoque e previsão de safras.</p>
+                <p>Plataforma digital completa para controle de estoque, previsão de safras, análise climática e tomada de decisão baseada em dados reais.</p>
             </div>
-            <div class="card">
-                <h3>Consultoria Especializada</h3>
-                <p>Equipe de agrônomos prontos para oferecer suporte técnico personalizado.</p>
+            <div class="card fade-in">
+                <div class="card-icon">🌱</div>
+                <h3>Consultoria Agronômica</h3>
+                <p>Equipe especializada de engenheiros agrônomos prontos para oferecer suporte técnico personalizado e estratégias sob medida para sua propriedade.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-icon">💧</div>
+                <h3>Irrigação Inteligente</h3>
+                <p>Sistemas automatizados que economizam água e garantem a irrigação ideal para cada tipo de cultura, reduzindo custos e desperdícios.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-icon">🚜</div>
+                <h3>Mecanização Moderna</h3>
+                <p>Equipamentos de última geração e treinamento completo para sua equipe, aumentando a eficiência operacional em todas as etapas.</p>
+            </div>
+            <div class="card fade-in">
+                <div class="card-icon">📈</div>
+                <h3>Gestão Financeira Rural</h3>
+                <p>Ferramentas específicas para o controle financeiro da propriedade rural, com relatórios, projeções e integração com crédito agrícola.</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="desafios">
-        <h2>Desafios do Setor</h2>
-        <p>Entendemos os principais obstáculos que o agronegócio enfrenta hoje</p>
-        <ul class="lista-desafios">
-            <li><strong>Mudanças Climáticas:</strong> Adaptação a eventos extremos e práticas de mitigação</li>
-            <li><strong>Escassez de Recursos:</strong> Uso eficiente da água e conservação do solo</li>
-            <li><strong>Logística Complexa:</strong> Otimização do transporte e armazenamento</li>
-            <li><strong>Sustentabilidade:</strong> Equilíbrio entre produção e preservação ambiental</li>
-        </ul>
-    </section>
+<!-- ============ COMO FUNCIONA ============ -->
+<section class="como-funciona">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Como Funciona</span>
+            <h2>Seu caminho para o agro do futuro</h2>
+            <p>Um processo simples, transparente e focado em resultados reais para o seu negócio.</p>
+        </div>
+        <div class="steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h3>Diagnóstico</h3>
+                <p>Analisamos sua propriedade, desafios e objetivos para entender sua realidade única.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">2</div>
+                <h3>Planejamento</h3>
+                <p>Desenvolvemos um plano estratégico personalizado com as melhores soluções para você.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">3</div>
+                <h3>Implementação</h3>
+                <p>Colocamos tudo em prática com acompanhamento técnico e suporte completo da equipe.</p>
+            </div>
+            <div class="step fade-in">
+                <div class="step-number">4</div>
+                <h3>Resultados</h3>
+                <p>Monitoramos os resultados e ajustamos a estratégia para maximizar seus ganhos.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <section id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Estamos prontos para ajudar você a construir o futuro do agro</p>
-        <form class="form-contato" action="#" method="post">
-            <input type="text" placeholder="Seu nome" required>
-            <input type="email" placeholder="Seu e-mail" required>
-            <textarea placeholder="Sua mensagem" rows="5" required></textarea>
-            <button type="submit" class="btn">Enviar Mensagem</button>
-        </form>
-    </section>
+<!-- ============ DESAFIOS ============ -->
+<section class="desafios" id="desafios">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Desafios do Setor</span>
+            <h2>Entendemos os obstáculos — e temos as respostas</h2>
+            <p>O agro brasileiro enfrenta desafios complexos. Estamos preparados para ajudar você a superá-los.</p>
+        </div>
+        <div class="lista-desafios">
+            <div class="desafio-item fade-in">
+                <div class="desafio-icon">🌡️</div>
+                <div class="desafio-content">
+                    <h3>Mudanças Climáticas</h3>
+                    <p>Eventos extremos cada vez mais frequentes exigem adaptação e práticas de mitigação inteligentes.</p>
+                </div>
+            </div>
+            <div class="desafio-item fade-in">
+                <div class="desafio-icon">💧</div>
+                <div class="desafio-content">
+                    <h3>Escassez de Recursos Hídricos</h3>
+                    <p>Gestão eficiente da água e técnicas de conservação do solo são fundamentais para a longevidade das terras.</p>
+                </div>
+            </div>
+            <div class="desafio-item fade-in">
+                <div class="desafio-icon">🚚</div>
+                <div class="desafio-content">
+                    <h3>Logística Complexa</h3>
+                    <p>Otimização do transporte, armazenamento e escoamento da produção em um país de dimensões continentais.</p>
+                </div>
+            </div>
+            <div class="desafio-item fade-in">
+                <div class="desafio-icon">🌿</div>
+                <div class="desafio-content">
+                    <h3>Sustentabilidade e Compliance</h3>
+                    <p>Equilibrar alta produtividade com preservação ambiental e atendimento às normas regulatórias.</p>
+                </div>
+            </div>
+            <div class="desafio-item fade-in">
+                <div class="desafio-icon">👨‍🌾</div>
+                <div class="desafio-content">
+                    <h3>Sucessão Familiar</h3>
+                    <p>Preparar a nova geração para continuar e modernizar o negócio rural com visão de longo prazo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Agro Forte. Todos os direitos reservados.</p>
-    </footer>
+<!-- ============ SUSTENTABILIDADE + QUIZ ============ -->
+<section class="sustentabilidade" id="sustentabilidade">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Sustentabilidade</span>
+            <h2>Práticas que preservam o amanhã</h2>
+            <p>Integramos a sustentabilidade em cada etapa, porque o agro do futuro precisa ser verde.</p>
+        </div>
+        <div class="sust-grid">
+            <div class="sust-item fade-in">
+                <div class="sust-icon">🌳</div>
+                <h3>Reflorestamento</h3>
+                <p>Recuperação de áreas degradadas e plantio de matas nativas.</p>
+            </div>
+            <div class="sust-item fade-in">
+                <div class="sust-icon">☀️</div>
+                <h3>Energia Solar</h3>
+                <p>Redução da pegada de carbono com energia limpa nas propriedades.</p>
+            </div>
+            <div class="sust-item fade-in">
+                <div class="sust-icon">🌾</div>
+                <h3>Plantio Direto</h3>
+                <p>Técnica que protege o solo, retém umidade e aumenta a fertilidade.</p>
+            </div>
+            <div class="sust-item fade-in">
+                <div class="sust-icon">♻️</div>
+                <h3>Tratamento de Resíduos</h3>
+                <p>Transformação de resíduos em recursos através de compostagem e biodigestores.</p>
+            </div>
+        </div>
+
+        <div class="quiz-container fade-in" id="quiz">
+            <h3>🎯 Teste seus conhecimentos!</h3>
+            <p class="quiz-question">Qual prática agrícola ajuda na conservação do solo?</p>
+            <div class="quiz-options">
+                <button class="quiz-option" data-correct="false">🔥 Queimada controlada</button>
+                <button class="quiz-option" data-correct="true">🌱 Plantio Direto</button>
+                <button class="quiz-option" data-correct="false">🪓 Desmatamento para plantio</button>
+                <button class="quiz-option" data-correct="false">💨 Uso excessivo de agrotóxicos</button>
+            </div>
+            <div class="quiz-feedback" id="quizFeedback"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ DEPOIMENTOS ============ -->
+<section class="depoimentos">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Depoimentos</span>
+            <h2>O que nossos clientes dizem</h2>
+            <p>Histórias reais de produtores que transformaram suas propriedades com a Agro Forte.</p>
+        </div>
+        <div class="depoimentos-grid">
+            <div class="depoimento fade-in">
+                <div class="stars">★★★★★</div>
+                <p class="depoimento-texto">A tecnologia de precisão da Agro Forte mudou completamente minha lavoura. Aumentei a produtividade em 35% no primeiro ano e reduzi o uso de insumos.</p>
+                <div class="depoimento-autor">
+                    <div class="autor-avatar">JR</div>
+                    <div class="autor-info">
+                        <h4>João Ribeiro</h4>
+                        <span>Produtor de Soja — MT</span>
+                    </div>
+                </div>
+            </div>
+            <div class="depoimento fade-in">
+                <div class="stars">★★★★★</div>
+                <p class="depoimento-texto">A consultoria especializada me ajudou a profissionalizar a gestão da fazenda. Hoje tenho controle total dos números e decisões muito mais assertivas.</p>
+                <div class="depoimento-autor">
+                    <div class="autor-avatar">MA</div>
+                    <div class="autor-info">
+                        <h4>Maria Alves</h4>
+                        <span>Pecuarista — GO</span>
+                    </div>
+                </div>
+            </div>
+            <div class="depoimento fade-in">
+                <div class="stars">★★★★★</div>
+                <p class="depoimento-texto">O sistema de irrigação inteligente economizou 40% de água na minha propriedade. Além de sustentável, ficou muito mais rentável. Recomendo demais!</p>
+                <div class="depoimento-autor">
+                    <div class="autor-avatar">CS</div>
+                    <div class="autor-info">
+                        <h4>Carlos Silva</h4>
+                        <span>Produtor de Frutas — SP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Perguntas Frequentes</span>
+            <h2>Tire suas dúvidas</h2>
+            <p>Respostas para as perguntas mais comuns sobre nossos serviços e soluções.</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Quais regiões do Brasil vocês atendem?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Atendemos produtores em todo o território nacional, com forte presença nas regiões Centro-Oeste, Sudeste e Sul. Nossa equipe técnica está preparada para atuar em diferentes biomas e realidades agrícolas.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>As soluções servem para pequenas propriedades?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Sim! Temos pacotes adaptados para todos os tamanhos de propriedade. Acreditamos que a tecnologia deve ser acessível e gerar valor para o produtor familiar, médio e grande.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Como funciona o suporte técnico?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Oferecemos suporte remoto e presencial, com engenheiros agrônomos dedicados. Você tem acesso a uma plataforma digital para acompanhamento em tempo real e visitas técnicas periódicas conforme o plano contratado.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Quais são as formas de pagamento?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Trabalhamos com diversas formas de pagamento, incluindo financiamento rural, Plano Safra, cartão de crédito e parcelamento direto. Nossa equipe comercial apresenta a melhor opção para o seu caso.</p>
+                </div>
+            </div>
+            <div class="faq-item fade-in">
+                <div class="faq-question">
+                    <span>Em quanto tempo vejo resultados?</span>
+                    <div class="faq-icon">+</div>
+                </div>
+                <div class="faq-answer">
+                    <p>Os primeiros resultados costumam aparecer já na primeira safra após a implementação. Resultados mais expressivos em produtividade e redução de custos são observados entre 6 e 12 meses de acompanhamento.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ CONTATO ============ -->
+<section class="contato" id="contato">
+    <div class="container">
+        <div class="section-header fade-in">
+            <span class="section-tag">Fale Conosco</span>
+            <h2>Vamos construir o futuro juntos</h2>
+            <p>Entre em contato e descubra como podemos transformar sua propriedade.</p>
+        </div>
+        <div class="contato-grid">
+            <div class="contato-info fade-in">
+                <h3>Informações de Contato</h3>
+                <p>Estamos prontos para atender você. Escolha o canal de sua preferência.</p>
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <strong>Endereço</strong>
+                        <span>Av. do Agro, 1500 — Goiânia/GO</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <strong>Telefone</strong>
+                        <span>(62) 3000-0000</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div>
+                        <strong>E-mail</strong>
+                        <span>contato@agroforte.com.br</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="info-icon">🕐</div>
+                    <div>
+                        <strong>Horário</strong>
+                        <span>Seg a Sex: 08h às 18h</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">📘</a>
+                    <a href="#" aria-label="Instagram">📷</a>
+                    <a href="#" aria-label="LinkedIn">💼</a>
+                    <a href="#" aria-label="YouTube">▶️</a>
+                </div>
+            </div>
+            <form class="form-contato fade-in" id="contactForm">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required placeholder="Seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000">
+                </div>
+                <div class="form-group">
+                    <label for="assunto">Assunto</label>
+                    <select id="assunto" name="assunto" required>
+                        <option value="">Selecione um assunto</option>
+                        <option value="solucoes">Quero conhecer as soluções</option>
+                        <option value="orcamento">Solicitar orçamento</option>
+                        <option value="suporte">Suporte técnico</option>
+                        <option value="parceria">Proposta de parceria</option>
+                        <option value="outro">Outro assunto</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required placeholder="Como podemos ajudar?"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Mensagem →</button>
+                <div class="form-message success" id="formMessage">
+                    ✓ Mensagem enviada com sucesso! Entraremos em contato em breve.
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <div class="logo">
+                <span class="logo-icon">🌱</span>
+                Agro Forte
+            </div>
+            <p>Transformando o agronegócio brasileiro com tecnologia, sustentabilidade e compromisso com o futuro.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Navegação</h4>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#desafios">Desafios</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <div class="footer-col">
+            <h4>Soluções</h4>
+            <a href="#">Agricultura de Precisão</a>
+            <a href="#">Gestão Inteligente</a>
+            <a href="#">Consultoria</a>
+            <a href="#">Irrigação</a>
+        </div>
+        <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>Receba novidades e dicas do agro diretamente no seu e-mail.</p>
+            <form class="newsletter-form" style="margin-top: 1rem; display: flex; gap: 0.5rem;">
+                <input type="email" placeholder="Seu e-mail" style="flex: 1; padding: 0.7rem 1rem; border-radius: 30px; border: none; background: rgba(255,255,255,0.1); color: white; font-family: 'Poppins', sans-serif;">
+                <button type="submit" class="btn btn-primary" style="padding: 0.7rem 1.2rem;">OK</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 Agro Forte. Todos os direitos reservados. | Feito com 💚 para o agro brasileiro.</p>
+    </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">↑</button>
+
+<!-- JavaScript externo -->
+<script src="script.js"></script>
+
 </body>
 </html>
